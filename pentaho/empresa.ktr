@@ -11,7 +11,7 @@
     <parameters>
       <parameter>
         <name>filepath</name>
-        <default_value>E:\Projetos\TCCI\TCC_EmpresasMatoGrosso\files_\extracted\cnpj_empresa.csv</default_value>
+        <default_value>E:\Projetos\TCCI\TCC_EmpresasMatoGrosso\files\extracted\dados_abertos_cnpj_empresa_03.csv</default_value>
         <description>Path to the file to transform</description>
       </parameter>
     </parameters>
@@ -498,11 +498,6 @@
   </connection>
   <order>
     <hop>
-      <from>String operations</from>
-      <to>Modified JavaScript value</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Modified JavaScript value</from>
       <to>Table output</to>
       <enabled>Y</enabled>
@@ -515,6 +510,11 @@
     <hop>
       <from>Select values</from>
       <to>String operations</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations</from>
+      <to>Modified JavaScript value</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -537,8 +537,13 @@
         <jsScript_name>Script 1</jsScript_name>
         <jsScript_script>//Script here
 
-var cpf = razao_social.substring(razao_social.length-11).match(/\d+/g);
-var razao_social2 = razao_social.replace(" " + cpf, "");</jsScript_script>
+var cpf = '';
+var razao_social2 = '';
+if (razao_social != null) {
+	cpf = razao_social.substring(razao_social.length-11).match(/\d+/g);
+	razao_social2 = razao_social.replace(" " + cpf, "");
+}
+</jsScript_script>
       </jsScript>
     </jsScripts>
     <fields>
@@ -647,7 +652,7 @@ var razao_social2 = razao_social.replace(" " + cpf, "");</jsScript_script>
     <name>String operations</name>
     <type>StringOperations</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -758,7 +763,7 @@ var razao_social2 = razao_social.replace(" " + cpf, "");</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
+      <xloc>640</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>

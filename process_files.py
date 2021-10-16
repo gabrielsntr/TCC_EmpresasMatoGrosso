@@ -4,11 +4,7 @@ import subprocess
 pentaho_loc = 'C:/Program Files (x86)/Pentaho/data-integration/'
 file_path = os.path.abspath('./files/extracted/')
 transform_path = os.path.abspath('./pentaho/')
-#files = os.listdir(file_path)
 
-#for file in files:
-#    fullpath = file_path + "/" + file
-#    command = '"' + pentaho_loc + 'pan.bat" /file:"' + transform_path + '/{0}.ktr" ' + '"/param:filepath=' + fullpath + '"'
 
 def run_transform(file):
     fullpath = file_path + "/" + file
@@ -60,3 +56,10 @@ def run_transform(file):
 def run_dw_transform(sync_date):
     command = '"' + pentaho_loc + 'pan.bat" /file:"' + transform_path + '/{0}.ktr" ' + '"/param:sync_date=' + sync_date + '"'
     subprocess.run(command.format('staging_production'))
+
+
+files = os.listdir(file_path)
+for file in files:
+    fullpath = file_path + "/" + file
+    run_transform(fullpath)
+    run_dw_transform('2021-10-14')
