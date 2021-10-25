@@ -499,17 +499,17 @@
   <order>
     <hop>
       <from>input_qualificacao_socio</from>
-      <to>String operations</to>
+      <to>ajusta_capitalizacao_letras</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>String operations</from>
+      <from>ajusta_capitalizacao_letras</from>
       <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>String operations</name>
+    <name>ajusta_capitalizacao_letras</name>
     <type>StringOperations</type>
     <description/>
     <distribute>Y</distribute>
@@ -658,7 +658,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>192</xloc>
+      <xloc>176</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>

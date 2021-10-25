@@ -498,23 +498,23 @@
   </connection>
   <order>
     <hop>
-      <from>String operations</from>
+      <from>ajusta_capitalizacao_letras</from>
       <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>input_empresa</from>
-      <to>Select values</to>
+      <to>cria_cnpj_integer</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values</from>
-      <to>String operations</to>
+      <from>cria_cnpj_integer</from>
+      <to>ajusta_capitalizacao_letras</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Select values</name>
+    <name>cria_cnpj_integer</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -531,36 +531,47 @@
       </field>
       <field>
         <name>cnpj_basico</name>
+        <rename/>
       </field>
       <field>
         <name>id_socio</name>
+        <rename/>
       </field>
       <field>
         <name>nome</name>
+        <rename/>
       </field>
       <field>
         <name>cpf_cnpj</name>
+        <rename/>
       </field>
       <field>
         <name>id_qualificacao</name>
+        <rename/>
       </field>
       <field>
         <name>data_entrada</name>
+        <rename/>
       </field>
       <field>
         <name>pais</name>
+        <rename/>
       </field>
       <field>
         <name>cpf_representante</name>
+        <rename/>
       </field>
       <field>
         <name>nome_representante</name>
+        <rename/>
       </field>
       <field>
         <name>id_qualificacao_representante</name>
+        <rename/>
       </field>
       <field>
         <name>faixa_etaria</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
@@ -596,7 +607,7 @@
     </GUI>
   </step>
   <step>
-    <name>String operations</name>
+    <name>ajusta_capitalizacao_letras</name>
     <type>StringOperations</type>
     <description/>
     <distribute>Y</distribute>

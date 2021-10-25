@@ -504,42 +504,42 @@
     </hop>
     <hop>
       <from>concatenate_cnae</from>
-      <to>Select values</to>
+      <to>cria_cnpj_int</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values</from>
+      <from>cria_cnpj_int</from>
       <to>split_cnae</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>split_cnae</from>
-      <to>categorize_cnae</to>
+      <to>categoriza_cnae</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>categorize_cnae</from>
-      <to>Null if</to>
+      <from>categoriza_cnae</from>
+      <to>data_nula_caso_0</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Null if</from>
+      <from>data_nula_caso_0</from>
       <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>filtra_estado</from>
-      <to>String operations</to>
+      <to>ajusta_capitalizacao_letras</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>String operations</from>
+      <from>ajusta_capitalizacao_letras</from>
       <to>concatenate_cnae</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Null if</name>
+    <name>data_nula_caso_0</name>
     <type>NullIf</type>
     <description/>
     <distribute>Y</distribute>
@@ -578,7 +578,7 @@
     </GUI>
   </step>
   <step>
-    <name>Select values</name>
+    <name>cria_cnpj_int</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -595,36 +595,47 @@
       </field>
       <field>
         <name>cnpj_basico</name>
+        <rename/>
       </field>
       <field>
         <name>cnpj_ordem</name>
+        <rename/>
       </field>
       <field>
         <name>cnpj_dv</name>
+        <rename/>
       </field>
       <field>
         <name>id_matriz_filial</name>
+        <rename/>
       </field>
       <field>
         <name>nome_fantasia</name>
+        <rename/>
       </field>
       <field>
         <name>id_situacao_cadastral</name>
+        <rename/>
       </field>
       <field>
         <name>data_situacao_cadastral</name>
+        <rename/>
       </field>
       <field>
         <name>motivo_situacao_cadastral</name>
+        <rename/>
       </field>
       <field>
         <name>nome_cidade_exterior</name>
+        <rename/>
       </field>
       <field>
         <name>id_pais</name>
+        <rename/>
       </field>
       <field>
         <name>data_inicio_atividade</name>
+        <rename/>
       </field>
       <field>
         <name>id_cnae</name>
@@ -632,60 +643,79 @@
       </field>
       <field>
         <name>id_cnae_secundaria</name>
+        <rename/>
       </field>
       <field>
         <name>tipo_logradouro</name>
+        <rename/>
       </field>
       <field>
         <name>logradouro</name>
+        <rename/>
       </field>
       <field>
         <name>numero</name>
+        <rename/>
       </field>
       <field>
         <name>complemento</name>
+        <rename/>
       </field>
       <field>
         <name>bairro</name>
+        <rename/>
       </field>
       <field>
         <name>cep</name>
+        <rename/>
       </field>
       <field>
         <name>uf</name>
+        <rename/>
       </field>
       <field>
         <name>id_municipio</name>
+        <rename/>
       </field>
       <field>
         <name>ddd1</name>
+        <rename/>
       </field>
       <field>
         <name>telefone1</name>
+        <rename/>
       </field>
       <field>
         <name>ddd2</name>
+        <rename/>
       </field>
       <field>
         <name>telefone2</name>
+        <rename/>
       </field>
       <field>
         <name>ddd_fax</name>
+        <rename/>
       </field>
       <field>
         <name>fax</name>
+        <rename/>
       </field>
       <field>
         <name>email</name>
+        <rename/>
       </field>
       <field>
         <name>id_situacao_especial</name>
+        <rename/>
       </field>
       <field>
         <name>data_situacao_especial</name>
+        <rename/>
       </field>
       <field>
         <name>lista_cnae</name>
+        <rename/>
       </field>
       <select_unspecified>Y</select_unspecified>
       <meta>
@@ -755,7 +785,7 @@
     </GUI>
   </step>
   <step>
-    <name>String operations</name>
+    <name>ajusta_capitalizacao_letras</name>
     <type>StringOperations</type>
     <description/>
     <distribute>Y</distribute>
@@ -867,7 +897,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>208</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1025,7 +1055,7 @@
     </GUI>
   </step>
   <step>
-    <name>categorize_cnae</name>
+    <name>categoriza_cnae</name>
     <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
@@ -1101,7 +1131,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
+      <xloc>288</xloc>
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1117,7 +1147,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <send_true_to>String operations</send_true_to>
+    <send_true_to>ajusta_capitalizacao_letras</send_true_to>
     <send_false_to/>
     <compare>
       <condition>

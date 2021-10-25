@@ -498,28 +498,28 @@
   </connection>
   <order>
     <hop>
-      <from>Modified JavaScript value</from>
+      <from>isola_cpf_mei</from>
       <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>input_empresa</from>
-      <to>Select values</to>
+      <to>cria_cnpj_basico_int</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values</from>
-      <to>String operations</to>
+      <from>cria_cnpj_basico_int</from>
+      <to>ajusta_capitalizacao_letras</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>String operations</from>
-      <to>Modified JavaScript value</to>
+      <from>ajusta_capitalizacao_letras</from>
+      <to>isola_cpf_mei</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Modified JavaScript value</name>
+    <name>isola_cpf_mei</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
@@ -573,13 +573,13 @@ if (razao_social != null) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>464</xloc>
+      <xloc>496</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Select values</name>
+    <name>cria_cnpj_basico_int</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -596,24 +596,31 @@ if (razao_social != null) {
       </field>
       <field>
         <name>cnpj_basico</name>
+        <rename/>
       </field>
       <field>
         <name>razao_social</name>
+        <rename/>
       </field>
       <field>
         <name>natureza_juridica</name>
+        <rename/>
       </field>
       <field>
         <name>qualificacao_responsavel</name>
+        <rename/>
       </field>
       <field>
         <name>capital_social</name>
+        <rename/>
       </field>
       <field>
         <name>id_porte_empresa</name>
+        <rename/>
       </field>
       <field>
         <name>ente_federativo</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
@@ -649,7 +656,7 @@ if (razao_social != null) {
     </GUI>
   </step>
   <step>
-    <name>String operations</name>
+    <name>ajusta_capitalizacao_letras</name>
     <type>StringOperations</type>
     <description/>
     <distribute>N</distribute>
@@ -683,7 +690,7 @@ if (razao_social != null) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
+      <xloc>336</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
